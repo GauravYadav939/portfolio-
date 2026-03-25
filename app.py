@@ -60,7 +60,10 @@ def index():
     else:
         return render_template('forms.html')
 
-
+@app.route('/responses')
+def responses():
+    all_data = myresp.query.all()
+    return str([(r.name, r.email, r.age, r.gender, r.msg) for r in all_data])
 
     
     
