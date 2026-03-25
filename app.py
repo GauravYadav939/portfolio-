@@ -63,7 +63,7 @@ def index():
 @app.route('/responses')
 def responses():
     all_data = myresp.query.all()
-    return str([(r.name, r.email, r.age, r.gender, r.msg) for r in all_data])
+    return render_template('responses.html', data=all_data)
 
     
     
